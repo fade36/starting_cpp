@@ -1,0 +1,5 @@
+Apple: 25
+Banana: 26
+Milk: 10
+Total: 61
+Highest: Banana
