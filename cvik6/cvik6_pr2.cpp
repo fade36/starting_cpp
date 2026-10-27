@@ -21,15 +21,18 @@ class Station{
         void setLoad(int minutes) {
             load = minutes;
         }
-        bool operator<(const Station &other) {
+        bool operator<(const Station &other) const
+        {
             return load < other.load;
         }
 };
-Station &lessLoaded(Station &first, Station &second) {
-    if(first.getLoad() == second.getLoad()) {
-        return first;
+Station &lessLoaded(Station &first, Station &second)
+{
+    if (second < first)
+    {
+        return second;
     }
-    return (first.getLoad() < second.getLoad()) ? first : second;
+    return first;
 }
 void selectStation
 (Station stations[], int count, int limit, Station *&selected){
